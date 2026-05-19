@@ -7,59 +7,63 @@
 
     <meta
       name="keywords"
-      content="Frontend Developer, Mobile Developer, Open Source, Freelance Web Developer, Freelance Mobile Developer, React Native Developer, Developer Portfolio"
+      content="AI ML Engineer, Data Scientist, Computer Vision, Voice AI, LiveKit, Ollama, Whisper, Piper TTS, YOLO, PaddleOCR, OCR, CNN, Power BI, Python, Portfolio, Shivansh Thakur"
     />
+    <meta
+      name="description"
+      content="Shivansh Thakur — AI/ML Engineer & Data Scientist. 1+ year building production ML systems: real-time local voice AI (LiveKit, Whisper, Piper, Ollama), YOLO/PaddleOCR document intelligence, CNN computer-vision models, and Power BI analytics."
+    />
+    <meta property="og:title" content="Shivansh Thakur — AI/ML Engineer & Data Scientist" />
+    <meta
+      property="og:description"
+      content="AI/ML Engineer & Data Scientist — computer vision, real-time voice AI, OCR document intelligence and data analytics."
+    />
+    <meta property="og:url" content="https://shivu0070.github.io/portfolio" />
 
-    <meta name="description" content="Page description" />
-    <meta property="og:title" content="Shivansh thakur-data scientist" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="stylesheet" href="styles.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- boxicons -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="./script.js" defer></script>
-    <title>Shivansh thakur-data scientist</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
     />
+    <script src="./script.js" defer></script>
+    <title>Shivansh Thakur — AI/ML Engineer &amp; Data Scientist</title>
   </head>
   <body>
+    <!-- animated background layers -->
+    <div class="bg-fx" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+    </div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- scroll progress + custom cursor -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
     <!-- only for keyboard users -->
     <a class="skip-to-content" href="#main-content">Skip to content</a>
 
     <header class="main-header">
-      <nav class="nav slide-in-top">
+      <nav class="nav slide-in-top" id="nav">
         <div class="container">
-          <a href="#">
-            <img src="./assets/shivi.jpg" alt="williams" class="logo" />
-            <title>Logo</title>
+          <a href="#top" aria-label="back to top">
+            <img src="./assets/shivi.jpg" alt="Shivansh Thakur" class="logo" />
           </a>
 
           <ul class="nav-list">
-            <li>
-              <a href="#about" class="nav-links hover-effect">About</a>
-            </li>
-            <li>
-              <a href="#skills" class="nav-links hover-effect">Skills</a>
-            </li>
-
-            <li>
-              <a href="#education" class="nav-links hover-effect">Education</a>
-            </li>
-
-            <li>
-              <a href="#projects" class="nav-links hover-effect">Projects</a>
-            </li>
-            <li>
-              <a href="#certifications" class="nav-links hover-effect"
-                >Certifications</a
-              >
-            </li>
-            <li>
-              <a href="#contact" class="nav-links hover-effect">Contact</a>
-            </li>
+            <li><a href="#about" class="nav-links">About</a></li>
+            <li><a href="#experience" class="nav-links">Experience</a></li>
+            <li><a href="#skills" class="nav-links">Skills</a></li>
+            <li><a href="#projects" class="nav-links">Projects</a></li>
+            <li><a href="#education" class="nav-links">Education</a></li>
+            <li><a href="#certifications" class="nav-links">Certifications</a></li>
+            <li><a href="#contact" class="nav-links">Contact</a></li>
           </ul>
 
           <ul class="social-nav">
@@ -68,7 +72,7 @@
                 href="https://www.linkedin.com/in/shivansh-thakur1708/"
                 rel="noreferrer"
                 target="_blank"
-                aria-label="link to linkedin profile"
+                aria-label="LinkedIn profile"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -88,7 +92,7 @@
                 href="https://github.com/shivu0070"
                 rel="noreferrer"
                 target="_blank"
-                aria-label="link to github account"
+                aria-label="GitHub profile"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -106,7 +110,7 @@
             </li>
           </ul>
 
-          <div class="hamburger">
+          <div class="hamburger" aria-label="menu" role="button" tabindex="0">
             <div class="line-menu half start"></div>
             <div class="line-menu"></div>
             <div class="line-menu half end"></div>
@@ -116,428 +120,788 @@
     </header>
 
     <main id="main-content">
-      <!-- hero section -->
-
+      <!-- HERO -->
       <section class="hero">
         <div class="container">
           <article class="hero-text bounce-in-left">
-            <div>
-              <p class="subtitle">hi there 👋🏽, i'm</p>
-              <h1 class="name">Shivansh thakur</h1>
+            <div class="hero-meta">
+              <p class="subtitle">hi there <span class="wave" aria-hidden="true">👋🏽</span>, i'm</p>
+              <span class="status-pill" aria-label="Open to opportunities">
+                <span class="status-dot" aria-hidden="true"></span>
+                Open to opportunities
+              </span>
             </div>
-            <div>
-              <p class="intro">
-                A Data scientist, Data analyst and Web Developer
-              </p>
 
-              <div class="hero-btn-container">
-                <a
-                  href="mailto:shivanshthakur1708@gmail.com"
-                  class="btn hire-btn"
-                >
-                  Hire Me
-                </a>
-                <a
-                  href="assets/Shivansh(CV).pdf"
-                  download=""
-                  class="btn hire-btn"
-                  >Download CV</a
-                >
+            <h1 class="name">Shivansh Thakur</h1>
+
+            <p class="role-line">
+              I build <span class="typing" id="typing"></span><span class="caret" aria-hidden="true"></span>
+            </p>
+
+            <a href="#experience" class="hero-now" data-cursor="hover">
+              <span class="now-pulse" aria-hidden="true"></span>
+              <i class="bx bx-buildings" aria-hidden="true"></i>
+              Currently <strong>Data Scientist</strong> @ Harijsoftech
+              <span class="arrow">→</span>
+            </a>
+
+            <div class="hero-stats">
+              <div>
+                <i class="bx bx-time-five" aria-hidden="true"></i>
+                <strong>1+ yr</strong>
+                <span>AI/ML &amp; data science</span>
+              </div>
+              <div>
+                <i class="bx bx-pulse" aria-hidden="true"></i>
+                <strong>&lt; 1s</strong>
+                <span>local voice-AI latency</span>
+              </div>
+              <div>
+                <i class="bx bx-target-lock" aria-hidden="true"></i>
+                <strong>90%+</strong>
+                <span>CNN model accuracy</span>
               </div>
             </div>
+
+            <div class="hero-btn-container">
+              <a href="mailto:shivanshthakur1708@gmail.com" class="btn hire-btn" data-cursor="hover">
+                <i class="bx bx-envelope"></i> Hire Me
+              </a>
+              <a
+                href="assets/Shivansh(CV).pdf"
+                download
+                class="btn hire-btn ghost"
+                data-cursor="hover"
+                ><i class="bx bx-download"></i> Download CV</a
+              >
+            </div>
           </article>
-          <img
-            src="./assets/coding-ground.png"
-            alt="coding desk"
-            class="fade-in code"
-          />
+
+          <div class="hero-visual fade-in">
+            <span class="ring" aria-hidden="true"></span>
+            <span class="hero-glow" aria-hidden="true"></span>
+            <span class="pulse-ring pr-1" aria-hidden="true"></span>
+            <span class="pulse-ring pr-2" aria-hidden="true"></span>
+            <span class="pulse-ring pr-3" aria-hidden="true"></span>
+            <video
+              class="code avatar-video"
+              id="heroVideo"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Animated avatar of Shivansh Thakur"
+            >
+              <source src="./assets/PixVerse_V6_Image_Text_540P_Cinematic_singlesh.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
+
+        <a href="#about" class="scroll-cue" aria-label="scroll down">
+          <span class="mouse" aria-hidden="true"></span>
+          <span>scroll</span>
+        </a>
       </section>
 
-      <!-- about section -->
+      <!-- ABOUT -->
       <section class="about-me" id="about">
-        <div class="container" data-aos="fade-up">
-          <img src="./assets/shivu.jpg" alt="Williams Samuel" />
-          <article>
-            <p class="subtitle">Who is Shivansh thakur?</p>
-            <h2 class="title">A Bit About Me</h2>
+        <div class="container">
+          <div class="photo-frame reveal reveal-left">
+            <img src="./assets/shivi.jpg" alt="Shivansh Thakur" />
+          </div>
+          <article class="reveal reveal-right">
+            <div class="section-head">
+              <p class="subtitle">Who is Shivansh?</p>
+              <h2 class="title">A Bit <span class="gradient-text">About Me</span></h2>
+            </div>
             <div class="about">
               <p>
-                I'm a passionate Data analyst with a strong interest in Data Analysis,AI,
-                Machine Learning, and Web Development. I thrive on solving
-                challenging problems and building innovative digital solutions.
+                I'm an <strong>AI/ML Engineer &amp; Data Scientist</strong> who
+                likes building AI that actually works in the real world — from
+                deep-learning models to computer-vision pipelines and AI
+                automation tools. I currently work as a Data Scientist (AI &amp;
+                computer-vision focus) at <strong>Harijsoftech</strong>.
               </p>
               <p>
-                As a developer, I’ve worked on projects ranging from e-commerce
-                platforms to image detection systems using AI, always striving
-                to write clean, efficient, and maintainable code. I love
-                collaborating with other developers to create impactful
-                applications that make a difference.
-              </p>
-
-              <p>
-                Through my studies and projects, I’ve gained hands-on experience
-                with technologies like Python, TensorFlow, Keras, OpenCV, Flask,
-                React, Node.js, MongoDB, and more, and I’m always eager to learn
-                and explore new advancements in AI and software development.
+                My day-to-day has spanned real-time local voice agents
+                (LiveKit, Whisper, Piper TTS, Ollama — sub-1s latency), YOLO +
+                PaddleOCR number-plate &amp; document extraction, CNN image
+                classifiers with TensorFlow / Keras, and end-to-end analytics
+                with Python, SQL and Power BI.
               </p>
               <p>
-                When I'm not coding, you’ll find me exploring the latest trends
-                in AI, brainstorming new project ideas, or just enjoying some
-                downtime with music and movies. 🚀
+                Comfortable across the stack — deep learning, OCR &amp; document
+                intelligence, RFM segmentation &amp; CLTV modelling, EDA and
+                feature engineering — and I can put a clean HTML / CSS / JS
+                frontend on top when a project needs an interface.
+              </p>
+              <p>
+                MCA in AI &amp; ML from Chandigarh University. When I'm not
+                shipping, I'm reading up on the latest in AI, sketching new
+                project ideas, or unwinding with music and movies. 🚀
               </p>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- my skills -->
-      <!-- My Skills Section -->
-
-      <section class="my-skills" id="skills" data-aos="fade-up">
+      <!-- EXPERIENCE -->
+      <section class="experience" id="experience">
         <div class="container">
-          <article>
-            <p class="subtitle">My Skills</p>
-            <h2 class="title">Technologies I Work With</h2>
+          <article class="reveal">
+            <div class="section-head">
+              <p class="subtitle">Experience</p>
+              <h2 class="title">Where I've <span class="gradient-text">Worked</span></h2>
+            </div>
             <p class="info">
-              I've taken a number of online courses, currently getting my hands
-              dirty with <strong>Flutter & React Native</strong>, and here are a
-              few technologies I’ve been working with recently:
+              Hands-on roles building AI/computer-vision systems and turning data
+              into decisions.
             </p>
           </article>
 
-          <ul class="skills-list">
-            <li>
-              <i class="devicon-html5-plain colored"></i> <span>HTML</span>
-            </li>
-            <li><i class="devicon-css3-plain colored"></i> <span>CSS</span></li>
-            <li>
-              <i class="devicon-react-original colored"></i> <span>React</span>
-            </li>
-            <li>
-              <i class="devicon-javascript-plain colored"></i>
-              <span>JavaScript (ES6+)</span>
-            </li>
-            <li>
-              <i class="devicon-java-plain colored"></i> <span>Java</span>
-            </li>
-            <li>
-              <i class="devicon-python-plain colored"></i> <span>Python</span>
-            </li>
-            <li><i class="devicon-git-plain colored"></i> <span>Git</span></li>
-            <li>
-              <i class="devicon-tensorflow-original colored"></i>
-              <span>TensorFlow</span>
-            </li>
-            <li>
-              <i class="devicon-nodejs-plain colored"></i> <span>Node.js</span>
-            </li>
-            <li>
-              <i class="devicon-mongodb-plain colored"></i> <span>MongoDB</span>
-            </li>
-            <li>
-              <i class="devicon-flask-original-wordmark"></i>
-              <span>Flask</span>
-            </li>
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <h3>Data Scientist — AI &amp; Computer Vision</h3>
+                  <span class="company">· Harijsoftech</span>
+                  <span class="badge-now">Current</span>
+                </div>
+                <p class="timeline-meta">On-site · Nov 2025 – Present</p>
+                <ul>
+                  <li>Built a <strong>fully-local real-time voice AI agent</strong> with sub-1-second barge-in — Whisper (STT) + Silero VAD + Ollama LLM + Piper TTS, transported over LiveKit WebRTC. No cloud APIs, two reasoning modes (chat streaming + JSON tool-calls), CUDA-accelerated.</li>
+                  <li>Engineered a <strong>real-time ALPR pipeline</strong> — YOLOv8 detects vehicles and plates, SORT tracks each across frames, PaddleOCR reads text — stabilised by a confidence-weighted character-voting system per vehicle ID that eliminates single-frame OCR flicker. Tested on UK and Indian footage.</li>
+                  <li>Trained a custom YOLOv8 <strong>plate-frame classifier</strong> on a hand-labelled dataset, hitting <strong>94.3% precision and 98.0% mAP@0.5</strong> for detecting decorative plate frames downstream of the ALPR.</li>
+                  <li>Fine-tuned a <strong>DistilBERT WhatsApp intent router</strong> for Hinglish customer messages — 5 business intents (complaint, confirmation, document, spam, status), reaching <strong>99.9% validation accuracy on 4,757 held-out samples</strong>. Drove the label-design pivot from 8 → 5 cleanly-separable classes when the original taxonomy plateaued.</li>
+                  <li>Shipped a <strong>consignment-note OCR pipeline</strong> (PaddleOCR + OpenCV + YAML config) that extracts <strong>7/7 fields in ~10 s on CPU</strong>. Bounding boxes auto-scale across resolutions so the same config handles phone, flatbed and document-camera scans.</li>
+                  <li>Built a rule-based <strong>Indian RC extractor</strong> with an ordered token-pool detector that locks high-confidence fields first to prevent loose patterns stealing them. Per-document AUTO_APPROVED / MANUAL_REVIEW tagging, Streamlit UI and batch CSV mode.</li>
+                  <li>Delivered an <strong>offline attention &amp; engagement monitor</strong> — MediaPipe FaceMesh + OpenCV solvePnP head-pose estimation classifying attentive / looking-away / looking-up / slacking states with temporal smoothing, on CPU-only.</li>
+                </ul>
+                <ul class="timeline-stack">
+                  <li>Python</li><li>YOLOv8</li><li>PaddleOCR</li><li>OpenCV</li>
+                  <li>LiveKit</li><li>Whisper</li><li>Ollama LLM</li><li>Piper TTS</li>
+                  <li>DistilBERT</li><li>PyTorch</li><li>HuggingFace</li>
+                  <li>MediaPipe</li><li>solvePnP</li><li>SORT Tracker</li>
+                  <li>Streamlit</li><li>CUDA</li>
+                </ul>
+              </div>
+            </div>
 
-            <!-- Keras and Matplotlib Fix -->
+            <div class="timeline-item reveal">
+              <div class="timeline-card">
+                <div class="timeline-head">
+                  <h3>Data Scientist Intern</h3>
+                  <span class="company">· Analytics Career Connect</span>
+                </div>
+                <p class="timeline-meta">Remote · Jan 2025 – Oct 2025</p>
+                <ul>
+                  <li>Performed RFM segmentation on 4,300+ customers — surfaced key loyalty groups and ₹8.3M in revenue clusters.</li>
+                  <li>Designed Power BI dashboards visualising customer behaviour, purchase frequency and revenue trends for stakeholders.</li>
+                  <li>Ran data cleaning, preprocessing and feature engineering to prepare datasets for machine-learning models.</li>
+                  <li>Applied statistical analysis, correlation checks and trend forecasting to flag operational inefficiencies and revenue opportunities.</li>
+                  <li>Presented actionable insights to cross-functional teams — improved marketing focus and customer-targeting strategy.</li>
+                </ul>
+                <ul class="timeline-stack">
+                  <li>Python</li><li>SQL</li><li>Power BI</li><li>Pandas</li>
+                  <li>Statistical Analysis</li><li>RFM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="my-skills" id="skills">
+        <div class="container">
+          <article class="reveal">
+            <div class="section-head">
+              <p class="subtitle">My Skills</p>
+              <h2 class="title">Tech Stack &amp; <span class="gradient-text">Focus Areas</span></h2>
+            </div>
+            <p class="info">
+              A working toolkit across AI/ML, computer vision, voice AI, OCR and
+              data analytics.
+            </p>
+          </article>
+
+          <ul class="skills-list reveal">
+            <li><i class="devicon-python-plain colored"></i><span>Python</span></li>
+            <li><i class="devicon-pandas-original colored"></i><span>Pandas</span></li>
+            <li><i class="devicon-numpy-original colored"></i><span>NumPy</span></li>
             <li>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg"
-                width="50"
-              />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/icons/scikitlearn/scikitlearn-original.svg" alt="scikit-learn" />
+              <span>scikit-learn</span>
+            </li>
+            <li><i class="devicon-tensorflow-original colored"></i><span>TensorFlow</span></li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" alt="Keras" />
               <span>Keras</span>
             </li>
+            <li><i class="devicon-opencv-plain colored"></i><span>OpenCV</span></li>
             <li>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg"
-                width="50"
-              />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Matplotlib_icon.svg" alt="Matplotlib" />
               <span>Matplotlib</span>
             </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" />
+              <span>Power BI</span>
+            </li>
+            <li><i class="devicon-sqlite-plain colored"></i><span>SQL / SQLite</span></li>
+            <li><i class="devicon-html5-plain colored"></i><span>HTML</span></li>
+            <li><i class="devicon-css3-plain colored"></i><span>CSS</span></li>
+            <li><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></li>
+            <li><i class="devicon-java-plain colored"></i><span>Java</span></li>
+            <li><i class="devicon-git-plain colored"></i><span>Git</span></li>
+            <li><i class="devicon-github-original colored"></i><span>GitHub</span></li>
+          </ul>
+
+          <p class="skill-group-title reveal">AI / ML &amp; Computer Vision</p>
+          <ul class="chip-cloud reveal">
+            <li>Deep Learning</li><li>CNNs</li><li>Object Detection</li>
+            <li>YOLO</li><li>Image Pre-processing</li><li>Video Analytics</li>
+            <li>Supervised &amp; Unsupervised Learning</li><li>Clustering</li>
+            <li>Regression</li><li>AutoML (PyCaret)</li><li>Model Evaluation</li>
+          </ul>
+
+          <p class="skill-group-title reveal">Voice AI · OCR · LLMs</p>
+          <ul class="chip-cloud reveal">
+            <li>LiveKit</li><li>Whisper (STT)</li><li>Piper TTS</li>
+            <li>Local LLMs (Ollama / GGUF)</li><li>Real-time Audio Pipelines</li>
+            <li>Low-latency Streaming</li><li>PaddleOCR</li><li>Tesseract</li>
+            <li>ROI &amp; Contour Detection</li><li>Adaptive Thresholding</li>
+            <li>Structured Data Extraction</li>
+          </ul>
+
+          <p class="skill-group-title reveal">Data Science &amp; Analytics</p>
+          <ul class="chip-cloud reveal">
+            <li>EDA</li><li>Feature Engineering</li><li>Statistical Analysis</li>
+            <li>Correlation Analysis</li><li>RFM Segmentation</li><li>CLTV Modelling</li>
+            <li>Trend Forecasting</li><li>Data Cleaning</li><li>Power BI / Tableau</li>
+            <li>DAX</li><li>SQL</li>
           </ul>
         </div>
       </section>
 
-      <!-- Education Section -->
-      <section class="education" id="education" data-aos="fade-up">
+      <!-- PROJECTS -->
+      <section class="projects-section" id="projects">
         <div class="container">
-          <article>
-            <p class="subtitle">Education</p>
-            <h2 class="title">My Academic Background</h2>
-            <div class="education-row">
-              <div class="education-item">
-                <strong>MCA in AI & ML</strong>
-                <p>– Chandigarh University (2023 - 2025)</p>
-              </div>
-              <div class="education-item">
-                <strong>BCA</strong>
-                <p>– Himachal Pradesh University (2020 - 2023)</p>
-              </div>
+          <article class="reveal">
+            <div class="section-head">
+              <p class="subtitle">My Projects</p>
+              <h2 class="title">Some Things <span class="gradient-text">I Built</span></h2>
             </div>
+            <p class="info">
+              A selection across real-time voice AI, OCR document intelligence,
+              computer vision, analytics and full-stack web.
+            </p>
           </article>
+
+          <div class="projects">
+            <!-- 01 — Voice AI Agent -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/local-voice-ai"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Voice AI Agent project — open repository"
+                >
+                  <video
+                    src="./assets/voice-ai-demo.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Voice AI Agent demo recording"
+                  ></video>
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">01</p>
+                <h2>Voice AI Agent — Local LLM with Real-Time Speech</h2>
+                <p class="project-tagline">Sub-1s barge-in · fully offline · no cloud APIs</p>
+                <p>
+                  A fully-local real-time voice assistant — speak to it, it
+                  speaks back, no cloud APIs. Whisper handles streaming STT,
+                  Silero VAD does voice activity detection, a locally-hosted
+                  Ollama LLM is the reasoning core, and Piper TTS gives natural
+                  speech, all transported in real-time over LiveKit WebRTC.
+                  Two reasoning modes (chat streaming + JSON tool-calls),
+                  prefetched audio chunks for zero inter-response gaps, and
+                  CUDA acceleration for sub-second barge-in.
+                </p>
+                <ul class="tech-stack">
+                  <li>LiveKit</li><li>Whisper</li><li>Silero VAD</li>
+                  <li>Ollama LLM</li><li>Piper TTS</li><li>Next.js</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/local-voice-ai" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 02 — ALPR — Plate Reader + Frame Classifier -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/alpr-plate-reader"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="ALPR plate reader project — open repository"
+                >
+                  <img src="./assets/alpr-demo.png" alt="ALPR pipeline detecting and reading license plates in real-time" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">02</p>
+                <h2>ALPR — Real-Time License Plate Reader</h2>
+                <p class="project-tagline">YOLOv8 + SORT tracking + character-voting OCR</p>
+                <p>
+                  An end-to-end ALPR pipeline for traffic video. YOLOv8 detects
+                  vehicles and plates, SORT tracks each vehicle across frames,
+                  and PaddleOCR reads the text — stabilised by a
+                  <strong>confidence-weighted character voting</strong> system
+                  per vehicle ID that eliminates single-frame OCR flicker.
+                  Tested on UK and Indian footage; outputs annotated video and
+                  CSV. Pairs with a custom YOLOv8 frame-classifier
+                  (<strong>94.3% precision, 98.0% mAP@0.5</strong>) that flags
+                  decorative plate frames from a hand-labelled dataset.
+                </p>
+                <ul class="tech-stack">
+                  <li>YOLOv8</li><li>SORT Tracker</li><li>PaddleOCR</li>
+                  <li>OpenCV</li><li>CUDA</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/alpr-plate-reader" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> Plate Reader <span class="arrow">→</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/shivu0070/number_plate-frame-checker" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> Frame Classifier <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 03 — WhatsApp Intent Router (Hinglish NLP) -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/whatsapp-intent-router"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="WhatsApp intent router project — open repository"
+                >
+                  <img src="./assets/whatsapp-confusion.png" alt="Confusion matrix showing 99.9% validation accuracy across 5 intent classes" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">03</p>
+                <h2>WhatsApp Intent Router — Hinglish NLP Classifier</h2>
+                <p class="project-tagline">DistilBERT fine-tune · 99.9% validation accuracy</p>
+                <p>
+                  A DistilBERT fine-tune (67M params, ~3h on CPU) that routes
+                  multilingual WhatsApp customer messages — English, Hindi,
+                  Hinglish with typos and emojis — into 5 business intents:
+                  complaint, confirmation, document, spam, status inquiry.
+                  Reached <strong>99.9% accuracy on 4,757 held-out samples</strong>
+                  and 100% on the hand-curated test set. The deeper lesson:
+                  the original 8-class taxonomy plateaued at 50% — collapsing
+                  to cleanly-separable 5 classes plus seed augmentation fixed
+                  it without hyper-parameter tuning. Trained end-to-end with
+                  class-weighted cross-entropy.
+                </p>
+                <ul class="tech-stack">
+                  <li>DistilBERT</li><li>HuggingFace</li><li>PyTorch</li>
+                  <li>NLP</li><li>Class Weighting</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/whatsapp-intent-router" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 04 — Consignment Note OCR -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/consignment-note-ocr"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Consignment note OCR project — open repository"
+                >
+                  <img src="./assets/ocr-boxes.png" alt="OCR bounding boxes overlaid on a dispatch note showing extracted value regions" style="object-position: center top;" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">04</p>
+                <h2>Consignment Note OCR — Document Intelligence</h2>
+                <p class="project-tagline">PaddleOCR + YAML config · 7/7 fields in ~10s on CPU</p>
+                <p>
+                  A production-grade OCR pipeline that turns scanned dispatch /
+                  consignment notes into clean, structured JSON. PaddleOCR for
+                  text recognition, OpenCV for pre-processing, YAML-driven
+                  bounding boxes that <strong>auto-scale across resolutions</strong>
+                  — so the same config works on phone scans, flatbed scans, and
+                  document camera shots. <strong>7/7 fields extracted in ~10s
+                  on CPU</strong>. Ships with batch mode, logging, a test
+                  suite, and a preview tool for validating box placement.
+                </p>
+                <ul class="tech-stack">
+                  <li>PaddleOCR</li><li>OpenCV</li><li>PyYAML</li>
+                  <li>JSON</li><li>Batch Processing</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/consignment-note-ocr" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 05 — RC Extractor (Indian Vehicle Documents) -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/rc_extractor_indian"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="RC extractor for Indian vehicle documents — open repository"
+                >
+                  <img src="./assets/rc-streamlit.png" alt="Streamlit UI auto-filling fields extracted from an Indian Vehicle RC document" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">05</p>
+                <h2>RC Extractor — Indian Vehicle Documents</h2>
+                <p class="project-tagline">Token-pool detectors · auto-approval pipeline</p>
+                <p>
+                  Rule-based extractor for Indian Vehicle Registration
+                  Certificates. PaddleOCR feeds an ordered token-pool detector
+                  that pulls out registration number, chassis, engine, owner,
+                  dates, maker/model and vehicle class. The key trick is
+                  <strong>detector ordering</strong> — running the
+                  easiest-to-hardest fields first locks high-confidence tokens
+                  so loose engine-number patterns can't steal them downstream.
+                  Each document is auto-tagged AUTO_APPROVED or
+                  MANUAL_REVIEW. Streamlit UI for live inspection, plus a
+                  batch CSV mode for bulk processing.
+                </p>
+                <ul class="tech-stack">
+                  <li>PaddleOCR</li><li>Rule-Based NLP</li><li>Streamlit</li>
+                  <li>Pattern Matching</li><li>Python</li><li>Pandas</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/rc_extractor_indian" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 06 — Attention & Engagement Monitor -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/attention_system"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Attention and engagement monitor project — open repository"
+                >
+                  <img src="./assets/attention-demo.png" alt="Attention monitor: side-by-side LOOKING_AWAY (52° yaw) vs ATTENTIVE state detection with live overlays" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">06</p>
+                <h2>Attention &amp; Engagement Monitor</h2>
+                <p class="project-tagline">MediaPipe FaceMesh + OpenCV solvePnP · CPU-only</p>
+                <p>
+                  A YAML-driven offline video pipeline that classifies a
+                  person's attention state frame-by-frame — attentive, looking
+                  away, looking up, slacking (prolonged head-down). MediaPipe
+                  FaceMesh extracts facial landmarks, OpenCV's solvePnP gives
+                  6-point head pose, and temporal logic smooths noise and
+                  collapses state intervals. Outputs an annotated video plus a
+                  per-session CSV log. Fully tunable via config, no code
+                  changes needed.
+                </p>
+                <ul class="tech-stack">
+                  <li>MediaPipe</li><li>OpenCV</li><li>solvePnP</li>
+                  <li>Head-Pose Estimation</li><li>NumPy</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/attention_system" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 07 — Fruit & Vegetable CNN -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/FARMSENSE"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Fruit and vegetable image classifier — open repository"
+                >
+                  <img src="./assets/vegies.jpg" alt="Fruit and vegetable image classification project" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">07</p>
+                <h2>FARMSENSE — Fruit &amp; Vegetable CNN</h2>
+                <p class="project-tagline">36 classes · 92.87% validation accuracy · TensorFlow</p>
+                <p>
+                  A TensorFlow / Keras CNN that classifies 36 fruit and
+                  vegetable categories at <strong>92.87% validation accuracy</strong>
+                  after 32 epochs, trained on 3,115 images and validated on
+                  351. Data is loaded with <code>image_dataset_from_directory</code>,
+                  resized to 64×64 RGB, and trained with categorical
+                  cross-entropy. Designed for agricultural-automation
+                  workflows where image-only classification beats manual
+                  tagging.
+                </p>
+                <ul class="tech-stack">
+                  <li>TensorFlow</li><li>Keras</li><li>CNN</li>
+                  <li>NumPy</li><li>Matplotlib</li><li>Python</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/FARMSENSE" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 08 — Customer Segmentation & CLTV -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/Data-analysis"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Customer segmentation and CLTV dashboard — open repository"
+                >
+                  <img src="./assets/analysis1.png" alt="Customer segmentation and CLTV dashboard" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">08</p>
+                <h2>Customer Segmentation &amp; CLTV Prediction</h2>
+                <p class="project-tagline">RFM · CLTV · Power BI · 4,300+ customers</p>
+                <p>
+                  Customer segmentation and Customer Lifetime Value analysis on
+                  large transactional datasets using Python, SQL and
+                  Scikit-learn — RFM segmentation isolated key loyalty groups
+                  across 4,300+ customers (~₹8.3M revenue clusters). Built and
+                  validated interactive Power BI dashboards with SQL- and
+                  Python-based accuracy checks, and cleaned missing /
+                  duplicate data to lift overall reporting reliability.
+                </p>
+                <ul class="tech-stack">
+                  <li>Python</li><li>SQL</li><li>Scikit-learn</li>
+                  <li>Power BI</li><li>DAX</li><li>Pandas</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/Data-analysis" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 09 — Supply Chain Analytics -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/Data-analysis"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Supply chain analytics dashboard — open repository"
+                >
+                  <img src="./assets/analysis2.png" alt="Supply chain analytics and delivery optimization dashboard" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">09</p>
+                <h2>Supply Chain Analytics &amp; Delivery Optimization</h2>
+                <p class="project-tagline">End-to-end analytics · KPI dashboard</p>
+                <p>
+                  Real-world supply-chain data analysed end to end — flagging
+                  late deliveries, optimising shipping strategy and
+                  visualising product- and location-wise revenue performance.
+                  An interactive Power BI dashboard tracks the KPIs that
+                  matter, built on cleaned, feature-engineered data modelled
+                  in SQLite.
+                </p>
+                <ul class="tech-stack">
+                  <li>Python</li><li>Pandas</li><li>SQLite</li>
+                  <li>Power BI</li><li>DAX</li><li>Feature Engineering</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/Data-analysis" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 10 — Cake Shop (frontend) -->
+            <article class="project reveal">
+              <div class="project-media">
+                <a
+                  href="https://github.com/shivu0070/webdev"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="project-img"
+                  aria-label="Cake shop website — open repository"
+                >
+                  <img src="./assets/cake.png" alt="Cake shop website" />
+                </a>
+              </div>
+              <div class="project-body">
+                <p class="project-index">10</p>
+                <h2>Cake Shop — Frontend Website</h2>
+                <p class="project-tagline">Responsive HTML / CSS / JS site</p>
+                <p>
+                  A clean, responsive cake-shop website built with plain HTML,
+                  CSS and JavaScript — product gallery, filtering, a
+                  localStorage-backed cart and a smooth checkout flow. Pure
+                  frontend, no framework — focused on good layout,
+                  accessibility and lightweight interactions.
+                </p>
+                <ul class="tech-stack">
+                  <li>HTML</li><li>CSS</li><li>JavaScript</li>
+                  <li>Responsive Design</li><li>localStorage</li>
+                </ul>
+                <ul class="project-links">
+                  <li>
+                    <a href="https://github.com/shivu0070/webdev" target="_blank" rel="noreferrer" data-cursor="hover">
+                      <i class="bx bxl-github"></i> GitHub <span class="arrow">→</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
         </div>
       </section>
 
-      <!-- Experience Section -->
-<section class="experience" id="experience" data-aos="fade-up" style="margin-top: 4rem;">
-  <div class="container experience-flex">
-    <div class="experience-text">
-      <p class="subtitle">Experience</p>
-      <h2 class="title">Internship Experience</h2>
-      <h3>Data Analyst Intern – Analytical Career Connect</h3>
-      <p class="duration-location">Remote | Jan 2025 – Present</p>
-      <ul class="responsibilities">
-        <li>Conducted advanced data analysis using Python (Pandas, Matplotlib, Seaborn), SQL (SQLite), and Power BI.</li>
-        <li>Created interactive dashboards and automated visual reports for supply chain performance and delivery tracking.</li>
-        <li>Performed segmentation, correlation, and trend analysis to identify underperforming vendors and top-performing products.</li>
-        <li>Wrote documentation and presented insights to mentors, helping improve delivery planning by highlighting 54% late shipments.</li>
-      </ul>
-    </div>
-    <div class="experience-image">
-      <img src="./assets/data-analysis-skills.jpeg" alt="Internship Analytics" />
-    </div>
-  </div>
-</section>
-
-
-      <!-- projects section -->
-      <section class="projects-section" id="projects">
+      <!-- EDUCATION -->
+      <section class="education" id="education">
         <div class="container">
-          <article data-aos="fade-up">
-            <p class="subtitle">My projects</p>
-            <h2 class="title">Some Things I Built</h2>
-            <p class="info">
-              I like to stay busy and always have a project in the works. Take a
-              look at some of the applications I've have built
-            </p>
+          <article class="reveal">
+            <div class="section-head">
+              <p class="subtitle">Education</p>
+              <h2 class="title">My Academic <span class="gradient-text">Background</span></h2>
+            </div>
           </article>
-          <section class="projects">
-            <!-- 01 -->
-            <article class="project">
-              <a target="_blank" rel="noreferrer" class="project-img"
-                ><img
-                  src="./assets/vegies.jpg"
-                  alt="the movieflix screenshot"
-                  title="the/movieflix"
-              /></a>
-              <div>
-                <h3>01</h3>
-                <h2>Fruit and Vegetable Image Detection System</h2>
-                <p>
-                  Developed a deep learning-based image detection system to
-                  classify fruits and vegetables with high accuracy. Tech Stack:
-                  Python, TensorFlow, Keras, OpenCV, Flask, MongoDB Implemented
-                  Convolutional Neural Networks (CNNs) to classify over 20 types
-                  of fruits and vegetables.
-                </p>
-                <ul class="tech-stack">
-                  <li>python</li>
-                  <li>keras CSS</li>
-                  <li>TensorFlow Query</li>
-                  <li>OpenCV</li>
-                  <li>Flask</li>
-                  <li>MongoDB</li>
-                </ul>
-                <ul class="project-links">
-                  <li>
-                    <a
-                      href="https://github.com/shivu0070"
-                      target="_blank"
-                      rel="noreferrer"
-                      class="hover-effect"
-                      >Github →</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </article>
-
-            <!-- 02 -->
-            <article class="project">
-              <a target="_blank" rel="noreferrer" class="project-img"
-                ><img
-                  src="./assets/cake.png"
-                  alt="the movieflix screenshot"
-                  title="the/movieflix"
-              /></a>
-              <div>
-                <h3>02</h3>
-                <h2>e-commerce website</h2>
-                <p>
-                  Functional e-commerce website for ordering cakes online,
-                  featuring a user-friendly interface, easy navigation, and
-                  secure payment integration. Used: HTML, CSS, JavaScript,
-                  React, Node.js, Express, MongoDB, Stripe API
-                </p>
-                <ul class="tech-stack">
-                  <li>Html</li>
-                  <li>CSS (useSWR)</li>
-                  <li>JavaScript Api (useContext)</li>
-                  <li>React</li>
-                </ul>
-                <ul class="project-links">
-                  <li>
-                    <a
-                      href="https://github.com/shivu0070"
-                      target="_blank"
-                      rel="noreferrer"
-                      class="hover-effect"
-                      >Github →</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </article>
-          </section>
-
-
-
-         <!-- 03 -->
-         <article class="project">
-          <a target="_blank" rel="noreferrer" class="project-img"
-            ><img
-              src="./assets/analysis1.png"
-              alt="the movieflix screenshot"
-              title="the/movieflix"
-          /></a>
-          <div>
-            <h3>03</h3>
-            <h2>Customer Segmentation & CLTV Prediction Dashboard</h2>
-            <p>
-              Data analytics project that segments customers using RFM (Recency, Frequency, Monetary) analysis and predicts Customer Lifetime Value (CLTV) to help optimize marketing strategies. Includes an interactive Power BI dashboard with AI-generated business insights.
-            </p>
-            <ul class="tech-stack">
-              <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
-              <li>RFM Analysis</li>
-              <li>CLTV Modeling</li>
-              <li>Power BI (DAX, Data Modeling, Interactive Visuals)</li>
-              <li>Excel</li>
-            </ul>
-            <ul class="project-links">
-              <li>
-                <a
-                  href="https://github.com/shivu0070"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="hover-effect"
-                  >Github →</a
-                >
-              </li>
-            </ul>
+          <div class="education-row">
+            <div class="education-item reveal" style="--delay: 0ms">
+              <p class="subtitle" style="border: 0; background: none; padding: 0">Aug 2023 — Aug 2025</p>
+              <strong>MCA — Artificial Intelligence &amp; Machine Learning</strong>
+              <p>Chandigarh University, India</p>
+            </div>
+            <div class="education-item reveal" style="--delay: 120ms">
+              <p class="subtitle" style="border: 0; background: none; padding: 0">Jul 2020 — Jul 2023</p>
+              <strong>BCA — Bachelor of Computer Applications</strong>
+              <p>VGC, HPU — Mandi, India</p>
+            </div>
           </div>
-        </article>
-
-
-        <!-- 04 -->
-        <article class="project">
-          <a target="_blank" rel="noreferrer" class="project-img"
-            ><img
-              src="./assets/analysis2.png"
-              alt="the movieflix screenshot"
-              title="the/movieflix"
-          /></a>
-          <div>
-            <h3>03</h3>
-            <h2>Supply Chain Analytics & Delivery Optimization</h2>
-            <p>
-              End-to-end data analytics project using real-world supply chain data to identify late deliveries, optimize shipping strategies, and visualize product-wise and location-wise revenue performance. Built an interactive Power BI dashboard to help uncover actionable business insights and track key KPIs.
-            </p>
-            <ul class="tech-stack">
-              <li>Python (Pandas, NumPy, Seaborn, Matplotlib)</li>
-              <li>Data Cleaning & Feature Engineering
-              </li>
-              <li>SQLite (Data Modeling & Querying)
-              </li>
-              <li>Power BI (DAX, KPI Cards, Maps)</li>
-            </ul>
-            <ul class="project-links">
-              <li>
-                <a
-                  href="https://github.com/shivu0070"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="hover-effect"
-                  >Github →</a
-                >
-              </li>
-            </ul>
-          </div>
-        </article>
+        </div>
       </section>
 
-
-      <!-- Certifications Section -->
-      <section class="certifications" id="certifications" data-aos="fade-left">
+      <!-- CERTIFICATIONS -->
+      <section class="certifications" id="certifications">
         <div class="container">
-          <article>
-            <p class="subtitle">Certifications</p>
-            <h2 class="title">My Certifications</h2>
+          <article class="reveal">
+            <div class="section-head">
+              <p class="subtitle">Certifications</p>
+              <h2 class="title">My <span class="gradient-text">Certifications</span></h2>
+            </div>
             <p class="info">
-              Here are some of the certifications I've earned to enhance my
-              skills and knowledge.
+              A few certifications I've earned along the way to sharpen my
+              skills.
             </p>
           </article>
 
           <div class="certifications-grid">
-            <!-- Certification 1 -->
-            <div class="certification-item">
-              <img
-                src="./assets/pyhton.png"
-                alt="Machine Learning with Python Certificate"
-                class="certificate-image"
-              />
+            <div class="certification-item reveal" style="--delay: 0ms">
+              <img src="./assets/pyhton.png" alt="Python 3 Programming certificate" class="certificate-image" />
               <div class="certificate-details">
-                <h3>Machine Learning with Python</h3>
+                <h3>Python 3 Programming</h3>
                 <p>Issued by: Coursera</p>
-                <p>Date: January 2023</p>
-                <a
-                  href="https://www.coursera.org/account/accomplishments/specialization/AWNE3VKXXFNJ"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="hover-effect"
-                  >View Certificate →</a
-                >
+                <p>Python basics, functions, OOP, Pillow, Tesseract &amp; OpenCV</p>
               </div>
             </div>
 
-            <!-- Certification 2 -->
-            <div class="certification-item">
-              <img
-                src="./assets/java.png"
-                alt="Deep Learning Specialization Certificate"
-                class="certificate-image"
-              />
+            <div class="certification-item reveal" style="--delay: 120ms">
+              <img src="./assets/web.png" alt="Web Development Bootcamp certificate" class="certificate-image" />
               <div class="certificate-details">
-                <h3>Deep Learning Specialization</h3>
-                <p>Issued by: DeepLearning.AI</p>
-                <p>Date: March 2023</p>
-                <a
-                  href="http://ude.my/UC-ad29eab0-c7cc-45f6-86d7-dcbb9477fc6d"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="hover-effect"
-                  >View Certificate →</a
-                >
-              </div>
-            </div>
-
-            <!-- Certification 3 -->
-            <div class="certification-item">
-              <img
-                src="./assets/web.png"
-                alt="Full Stack Web Development Certificate"
-                class="certificate-image"
-              />
-              <div class="certificate-details">
-                <h3>Full Stack Web Development</h3>
-                <p>Date: June 2023</p>
+                <h3>Web Development Bootcamp</h3>
+                <p>Issued by: Udemy</p>
+                <p>HTML / CSS, JavaScript, SQL &amp; Git — web foundations</p>
                 <a
                   href="http://ude.my/UC-d10e4ae1-6c2b-4399-ba92-2958c569f959"
                   target="_blank"
                   rel="noreferrer"
-                  class="hover-effect"
-                  >View Certificate →</a
+                  data-cursor="hover"
+                  >View Certificate <span class="arrow">→</span></a
+                >
+              </div>
+            </div>
+
+            <div class="certification-item reveal" style="--delay: 240ms">
+              <img src="./assets/java.png" alt="Java Programming certificate" class="certificate-image" />
+              <div class="certificate-details">
+                <h3>Java Programming</h3>
+                <p>Issued by: Udemy</p>
+                <p>Java basics, DSA, JDBC, Spring Boot &amp; debugging</p>
+                <a
+                  href="http://ude.my/UC-ad29eab0-c7cc-45f6-86d7-dcbb9477fc6d"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cursor="hover"
+                  >View Certificate <span class="arrow">→</span></a
                 >
               </div>
             </div>
@@ -545,72 +909,85 @@
         </div>
       </section>
 
-      <!-- contact section -->
-      <section class="contact" data-aos="fade-up">
-        <div class="container">
-          <p class="subtitle">Have a project? or just looking to hire?</p>
-          <h2 class="title">Let's Work Together</h2>
-          <p class="info">
-            Feel free to reach out if you're looking to hire, just want to
-            connect or see if we can build something amazing together.
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="container reveal">
+          <div class="section-head" style="align-items: center; text-align: center">
+            <p class="subtitle">Have a role? Or just want to connect?</p>
+            <h2 class="title">Let's <span class="gradient-text">Work Together</span></h2>
+          </div>
+          <p class="info" style="text-align: center">
+            Open to AI/ML Engineer &amp; Data Scientist roles. Reach out if
+            you're hiring, want to collaborate, or think we could build something
+            great together.
           </p>
 
-          <div>
-            <a
-              href="mailto:shivasnhthakur1708@gmail.com"
-              class="mail-link hover-effect"
-              >Get in touch →</a
-            >
-            <!-- -->
+          <div class="contact-methods">
+            <a href="mailto:shivanshthakur1708@gmail.com" data-cursor="hover">
+              <i class="bx bx-envelope"></i> shivanshthakur1708@gmail.com
+            </a>
+            <a href="tel:+917018213168" data-cursor="hover">
+              <i class="bx bx-phone"></i> +91 70182 13168
+            </a>
+            <a href="https://www.linkedin.com/in/shivansh-thakur1708/" target="_blank" rel="noreferrer" data-cursor="hover">
+              <i class="bx bxl-linkedin"></i> linkedin.com/in/shivansh-thakur1708
+            </a>
+            <span><i class="bx bx-map"></i> Mandi, Himachal Pradesh, India</span>
           </div>
+
+          <a href="mailto:shivanshthakur1708@gmail.com" class="mail-link" data-cursor="hover">
+            <i class="bx bx-paper-plane"></i> Get in touch <span class="arrow">→</span>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="footer" id="contact">
+    <footer class="footer">
       <div class="container">
-        <p>&copy; <span id="date"></span> Shivansh Thakur</p>
-        <div>
+        <p>&copy; <span id="date"></span> Shivansh Thakur — AI/ML Engineer &amp; Data Scientist · Mandi, H.P.</p>
+        <div class="footer-links">
           <ul>
             <li>
               <a
                 href="https://github.com/shivu0070"
                 rel="noreferrer"
                 target="_blank"
-                class="hover-effect"
-                aria-label="GitHub Profile"
+                aria-label="GitHub profile"
               >
-                <i class="devicon-github-original colored icon-animate"></i>
+                <i class="bx bxl-github icon-animate"></i>
               </a>
             </li>
             <li>
               <a
-                href="https://linkedin.com/in/shivansh-thakur1708"
+                href="https://www.linkedin.com/in/shivansh-thakur1708/"
                 rel="noreferrer"
                 target="_blank"
-                class="hover-effect"
-                aria-label="LinkedIn Profile"
+                aria-label="LinkedIn profile"
               >
-                <i class="devicon-linkedin-plain colored icon-animate"></i>
+                <i class="bx bxl-linkedin icon-animate"></i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:shivanshthakur1708@gmail.com"
+                aria-label="Email Shivansh"
+              >
+                <i class="bx bx-envelope icon-animate"></i>
               </a>
             </li>
           </ul>
-          <a href="#top" class="top">
+          <a href="#top" class="top" data-cursor="hover">
             <p class="scroll">scroll <span>to top</span></p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               style="fill: currentColor"
+              aria-hidden="true"
             >
-              <title>scroll to top</title>
-              <path
-                d="m6.293 11.293 1.414 1.414L12 8.414l4.293 4.293 1.414-1.414L12 5.586z"
-              ></path>
-              <path
-                d="m6.293 16.293 1.414 1.414L12 13.414l4.293 4.293 1.414-1.414L12 10.586z"
-              ></path>
+              <path d="m6.293 11.293 1.414 1.414L12 8.414l4.293 4.293 1.414-1.414L12 5.586z"></path>
+              <path d="m6.293 16.293 1.414 1.414L12 13.414l4.293 4.293 1.414-1.414L12 10.586z"></path>
             </svg>
           </a>
         </div>

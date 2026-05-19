@@ -1,0 +1,34 @@
+# Claude Code / AI working files
+memory/
+.claude/
+CLAUDE.md
+.cursor/
+.aider*
+.ai/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Build / temp
+node_modules/
+.cache/
+dist/
+build/
+*.log
+
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+secrets.*
