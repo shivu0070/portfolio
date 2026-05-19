@@ -2406,10 +2406,278 @@ small {
 	}
 	.hero-now {
 		margin-inline: auto;
+		max-width: 100%;
+		white-space: normal;
 	}
 	.hero-stats > div {
 		justify-items: start;
 		text-align: left;
+	}
+}
+
+/***********************
+	MOBILE OVERHAUL  (<= 768px and <= 480px)
+	Comprehensive mobile fixes for hero, projects, about,
+	timeline, skills, contact, and overflow.
+*********************/
+html, body {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+@media screen and (max-width: 48em) {
+	/* tighter root scale + section padding */
+	:root {
+		font-size: 9px;
+		--section-mt: 5rem;
+	}
+	.container {
+		padding: 0 1.2rem;
+	}
+
+	/* hide custom cursor entirely on touch-class screens */
+	.cursor-dot,
+	.cursor-ring {
+		display: none !important;
+	}
+
+	/* HERO ------------------------------------------------ */
+	.hero {
+		padding-top: 9rem;
+		min-height: auto;
+	}
+	.hero .container {
+		gap: 2.4rem !important;
+	}
+	.hero-text {
+		gap: 2rem !important;
+		align-items: center !important;
+		text-align: center;
+	}
+	.hero-meta {
+		justify-content: center;
+		gap: 0.7rem !important;
+		flex-direction: column;
+	}
+	.hero-text .subtitle {
+		font-size: 1.5rem;
+	}
+	.name {
+		font-size: clamp(3.6rem, 11vw, 5.6rem) !important;
+		line-height: 1.05;
+		word-break: break-word;
+	}
+	.role-line {
+		font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
+		padding-inline: 0.4rem;
+	}
+	.hero-now {
+		font-size: 1.2rem !important;
+		padding: 0.55rem 1rem !important;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
+	}
+
+	/* stack the 3 stat cards vertically */
+	.hero-stats {
+		flex-direction: column;
+		width: 100%;
+		gap: 0.9rem !important;
+	}
+	.hero-stats > div {
+		width: 100%;
+		padding: 0.9rem 1.2rem !important;
+	}
+	.hero-stats > div strong {
+		font-size: 1.6rem !important;
+	}
+	.hero-stats > div span {
+		font-size: 1.05rem;
+	}
+	.hero-stats > div > i.bx {
+		font-size: 2rem !important;
+	}
+
+	.hero-btn-container {
+		width: 100%;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem !important;
+	}
+	.hire-btn {
+		font-size: 1.15rem !important;
+		padding: 1rem 1.6rem !important;
+		letter-spacing: 1px;
+	}
+
+	/* hero video — cap size on mobile, drop big rings */
+	.hero-visual {
+		order: -1;
+		max-width: 280px;
+		margin-inline: auto;
+		width: 80vw;
+	}
+	.hero .code,
+	.hero-visual video,
+	.avatar-video {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+	.hero-visual .ring,
+	.hero-visual .hero-glow,
+	.hero-visual .pulse-ring {
+		display: none !important;
+	}
+
+	/* section titles smaller */
+	.title {
+		font-size: clamp(2.6rem, 7vw, 3.8rem);
+	}
+
+	/* ABOUT ---------------------------------------------- */
+	.about-me .container {
+		grid-template-columns: 1fr;
+		gap: 2.4rem;
+	}
+	.about-me .photo-frame {
+		max-width: 320px;
+		margin-inline: auto;
+	}
+	.about p {
+		font-size: 1.35rem;
+		line-height: 1.7;
+	}
+
+	/* EXPERIENCE TIMELINE -------------------------------- */
+	.timeline {
+		padding-left: 1.8rem;
+	}
+	.timeline-item::before {
+		left: calc(-1.8rem + 7px);
+		width: 11px;
+		height: 11px;
+	}
+	.timeline-card {
+		padding: 1.4rem 1.5rem;
+	}
+	.timeline-card > ul:not(.timeline-stack) > li {
+		padding-left: 1.5rem;
+		font-size: 1.3rem;
+	}
+	.timeline-stack {
+		gap: 0.5rem;
+	}
+	.timeline-stack li {
+		font-size: 1.1rem !important;
+		padding: 0.25rem 0.7rem !important;
+	}
+
+	/* SKILLS --------------------------------------------- */
+	.skills-list {
+		grid-template-columns: repeat(3, 1fr) !important;
+		gap: 1.2rem !important;
+	}
+	.skills-list li {
+		padding: 1rem 0.6rem !important;
+	}
+	.skills-list i,
+	.skills-list img {
+		font-size: 3rem !important;
+		width: 36px;
+		height: 36px;
+	}
+	.skills-list span {
+		font-size: 1.1rem !important;
+	}
+	.chip-cloud,
+	.tech-stack {
+		gap: 0.6rem !important;
+	}
+	.chip-cloud li,
+	.tech-stack li {
+		font-size: 1.1rem !important;
+		padding: 0.35rem 0.85rem !important;
+	}
+
+	/* PROJECTS ------------------------------------------- */
+	.projects {
+		gap: 5rem !important;
+		padding-block-start: 3rem;
+	}
+	.project {
+		grid-template-columns: 1fr !important;
+		gap: 1.8rem !important;
+	}
+	.project-body h2 {
+		font-size: clamp(1.9rem, 5vw, 2.4rem);
+	}
+	.project-body p {
+		font-size: 1.35rem;
+		line-height: 1.65;
+	}
+	.project-tagline {
+		font-size: 1.2rem !important;
+	}
+	.project-index {
+		font-size: 1.8rem !important;
+	}
+	.project-links {
+		flex-wrap: wrap;
+		gap: 0.8rem !important;
+	}
+	.project-links a {
+		font-size: 1.15rem !important;
+		padding: 0.6rem 1rem !important;
+	}
+
+	/* EDUCATION / CERTIFICATIONS ------------------------- */
+	.education-row,
+	.certifications .container > .reveal + div {
+		grid-template-columns: 1fr !important;
+		gap: 1.6rem;
+	}
+	.education-item,
+	.certification-item {
+		padding: 1.4rem 1.6rem !important;
+	}
+
+	/* CONTACT -------------------------------------------- */
+	.contact .container {
+		grid-template-columns: 1fr;
+	}
+	.contact-methods {
+		gap: 1rem;
+	}
+	.contact-methods a {
+		font-size: 1.3rem;
+		padding: 0.9rem 1.2rem;
+	}
+
+	/* FOOTER --------------------------------------------- */
+	footer {
+		padding: 2.4rem 1.2rem;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	/* generic — kill huge headings overflow */
+	h1, h2, h3, p, span, li {
+		word-break: break-word;
+	}
+}
+
+/* extra-small phones (<=400px) — extra-aggressive squeeze */
+@media screen and (max-width: 25em) {
+	:root { font-size: 8.5px; }
+	.skills-list {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+	.hero-visual {
+		max-width: 220px;
+	}
+	.name {
+		font-size: 3.4rem !important;
 	}
 }
 
