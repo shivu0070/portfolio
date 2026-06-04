@@ -271,10 +271,10 @@
                 </div>
                 <p class="timeline-meta">On-site · Nov 2025 – Present</p>
                 <ul>
-                  <li>Built a <strong>fully-local real-time voice AI agent</strong> with sub-1-second barge-in — Whisper (STT) + Silero VAD + Ollama LLM + Piper TTS, transported over LiveKit WebRTC. No cloud APIs, two reasoning modes (chat streaming + JSON tool-calls), CUDA-accelerated.</li>
-                  <li>Engineered a <strong>real-time ALPR pipeline</strong> — YOLOv8 detects vehicles and plates, SORT tracks each across frames, PaddleOCR reads text — stabilised by a confidence-weighted character-voting system per vehicle ID that eliminates single-frame OCR flicker. Tested on UK and Indian footage.</li>
-                  <li>Trained a custom YOLOv8 <strong>plate-frame classifier</strong> on a hand-labelled dataset, hitting <strong>94.3% precision and 98.0% mAP@0.5</strong> for detecting decorative plate frames downstream of the ALPR.</li>
-                  <li>Fine-tuned a <strong>DistilBERT WhatsApp intent router</strong> for Hinglish customer messages — 5 business intents (complaint, confirmation, document, spam, status), reaching <strong>99.9% validation accuracy on 4,757 held-out samples</strong>. Drove the label-design pivot from 8 → 5 cleanly-separable classes when the original taxonomy plateaued.</li>
+                  <li>Built a <strong>fully-local real-time voice AI agent</strong> with sub-1-second barge-in — faster-whisper (STT on CUDA) + Silero VAD + Ollama LLM + Piper TTS, transported over LiveKit WebRTC. No cloud APIs. LLM streams tokens sentence-by-sentence with prefetched audio chunks for zero inter-response gaps, CUDA-accelerated.</li>
+                  <li>Engineered a <strong>real-time ALPR pipeline</strong> — YOLOv8n detects vehicles, SORT tracks each across frames, a fine-tuned YOLOv8-Large locates the plate, PaddleOCR reads text — stabilised by confidence-weighted character-voting per vehicle ID that eliminates single-frame OCR flicker. Plate detector trained on 3,715 annotated Indian plate images (<strong>94.2% precision, 95.1% mAP@0.5</strong>). Tested on UK and Indian footage.</li>
+                  <li>Trained a custom YOLOv8 <strong>plate-frame classifier</strong> on 349 hand-labelled plate crops, hitting <strong>94.3% precision and 98.0% mAP@0.5</strong> for detecting decorative plate frames downstream of the ALPR.</li>
+                  <li>Fine-tuned a <strong>DistilBERT WhatsApp intent router</strong> for multilingual (English / Hindi / Hinglish + emojis) customer messages across 5 business intents; lifted accuracy from a ~50% baseline to production-ready levels by redesigning the label taxonomy (8 → 5 cleanly-separable classes) and applying class-weighted training.</li>
                   <li>Shipped a <strong>consignment-note OCR pipeline</strong> (PaddleOCR + OpenCV + YAML config) that extracts <strong>7/7 fields in ~10 s on CPU</strong>. Bounding boxes auto-scale across resolutions so the same config handles phone, flatbed and document-camera scans.</li>
                   <li>Built a rule-based <strong>Indian RC extractor</strong> with an ordered token-pool detector that locks high-confidence fields first to prevent loose patterns stealing them. Per-document AUTO_APPROVED / MANUAL_REVIEW tagging, Streamlit UI and batch CSV mode.</li>
                   <li>Delivered an <strong>offline attention &amp; engagement monitor</strong> — MediaPipe FaceMesh + OpenCV solvePnP head-pose estimation classifying attentive / looking-away / looking-up / slacking states with temporal smoothing, on CPU-only.</li>
@@ -427,13 +427,14 @@
                 <p class="project-tagline">Sub-1s barge-in · fully offline · no cloud APIs</p>
                 <p>
                   A fully-local real-time voice assistant — speak to it, it
-                  speaks back, no cloud APIs. Whisper handles streaming STT,
-                  Silero VAD does voice activity detection, a locally-hosted
+                  speaks back, no cloud APIs. faster-whisper handles STT on
+                  CUDA, Silero VAD does voice activity detection, a locally-hosted
                   Ollama LLM is the reasoning core, and Piper TTS gives natural
-                  speech, all transported in real-time over LiveKit WebRTC.
-                  Two reasoning modes (chat streaming + JSON tool-calls),
-                  prefetched audio chunks for zero inter-response gaps, and
-                  CUDA acceleration for sub-second barge-in.
+                  speech — all transported over LiveKit WebRTC. The LLM streams
+                  tokens sentence-by-sentence so audio output begins immediately
+                  after the opening clause generates. Prefetched audio chunks
+                  eliminate inter-response gaps, CUDA-accelerated for sub-1s
+                  barge-in.
                 </p>
                 <ul class="tech-stack">
                   <li>LiveKit</li><li>Whisper</li><li>Silero VAD</li>
@@ -467,15 +468,17 @@
                 <h2>ALPR — Real-Time License Plate Reader</h2>
                 <p class="project-tagline">YOLOv8 + SORT tracking + character-voting OCR</p>
                 <p>
-                  An end-to-end ALPR pipeline for traffic video. YOLOv8 detects
-                  vehicles and plates, SORT tracks each vehicle across frames,
-                  and PaddleOCR reads the text — stabilised by a
-                  <strong>confidence-weighted character voting</strong> system
-                  per vehicle ID that eliminates single-frame OCR flicker.
-                  Tested on UK and Indian footage; outputs annotated video and
-                  CSV. Pairs with a custom YOLOv8 frame-classifier
+                  An end-to-end ALPR pipeline for traffic video. YOLOv8n detects
+                  vehicles, SORT assigns each a persistent ID across frames, a
+                  fine-tuned YOLOv8-Large locates the plate, and PaddleOCR reads
+                  the text — stabilised by <strong>confidence-weighted character
+                  voting</strong> per vehicle ID that eliminates single-frame OCR
+                  flicker. Plate detector trained on 3,715 annotated Indian plate
+                  images (<strong>94.2% precision, 95.1% mAP@0.5</strong>).
+                  Outputs annotated video + CSV. Pairs with a custom YOLOv8
+                  frame-classifier trained on 349 hand-labelled crops
                   (<strong>94.3% precision, 98.0% mAP@0.5</strong>) that flags
-                  decorative plate frames from a hand-labelled dataset.
+                  decorative plate frames.
                 </p>
                 <ul class="tech-stack">
                   <li>YOLOv8</li><li>SORT Tracker</li><li>PaddleOCR</li>
@@ -519,11 +522,10 @@
                   Hinglish with typos and emojis — into 5 business intents:
                   complaint, confirmation, document, spam, status inquiry.
                   Reached <strong>99.9% accuracy on 4,757 held-out samples</strong>
-                  and 100% on the hand-curated test set. The deeper lesson:
-                  the original 8-class taxonomy plateaued at 50% — collapsing
-                  to cleanly-separable 5 classes plus seed augmentation fixed
-                  it without hyper-parameter tuning. Trained end-to-end with
-                  class-weighted cross-entropy.
+                  and 100% on the hand-curated test set. Lifted from a ~50%
+                  baseline by redesigning the label taxonomy (8 → 5
+                  cleanly-separable classes) and applying class-weighted
+                  training — no hyperparameter tuning needed.
                 </p>
                 <ul class="tech-stack">
                   <li>DistilBERT</li><li>HuggingFace</li><li>PyTorch</li>
@@ -599,15 +601,16 @@
                 <p class="project-tagline">Token-pool detectors · auto-approval pipeline</p>
                 <p>
                   Rule-based extractor for Indian Vehicle Registration
-                  Certificates. PaddleOCR feeds an ordered token-pool detector
-                  that pulls out registration number, chassis, engine, owner,
-                  dates, maker/model and vehicle class. The key trick is
-                  <strong>detector ordering</strong> — running the
-                  easiest-to-hardest fields first locks high-confidence tokens
-                  so loose engine-number patterns can't steal them downstream.
-                  Each document is auto-tagged AUTO_APPROVED or
-                  MANUAL_REVIEW. Streamlit UI for live inspection, plus a
-                  batch CSV mode for bulk processing.
+                  Certificates. PaddleOCR feeds a frozen token-pool where
+                  independent detectors pull out registration number, chassis,
+                  engine, owner, dates, maker/model and vehicle class. The
+                  critical design is <strong>detector ordering</strong> — strict
+                  fields (registration regex, 17-char chassis, dates) run first
+                  and lock their tokens, so the loose engine-number pattern
+                  can't steal them downstream. Documents scoring ≥ 0.85
+                  confidence on critical fields are auto-tagged
+                  AUTO_APPROVED; weaker extractions get MANUAL_REVIEW.
+                  Streamlit UI for live inspection plus batch CSV mode.
                 </p>
                 <ul class="tech-stack">
                   <li>PaddleOCR</li><li>Rule-Based NLP</li><li>Streamlit</li>
@@ -642,13 +645,14 @@
                 <p class="project-tagline">MediaPipe FaceMesh + OpenCV solvePnP · CPU-only</p>
                 <p>
                   A YAML-driven offline video pipeline that classifies a
-                  person's attention state frame-by-frame — attentive, looking
-                  away, looking up, slacking (prolonged head-down). MediaPipe
-                  FaceMesh extracts facial landmarks, OpenCV's solvePnP gives
-                  6-point head pose, and temporal logic smooths noise and
-                  collapses state intervals. Outputs an annotated video plus a
-                  per-session CSV log. Fully tunable via config, no code
-                  changes needed.
+                  person's attention state frame-by-frame: attentive, looking
+                  away (yaw beyond threshold), looking up (strong pitch), or
+                  slacking (sustained head-down). MediaPipe FaceMesh extracts
+                  landmarks, OpenCV solvePnP gives the 6-point head pose, and a
+                  state machine applies temporal logic so brief glances don't
+                  trigger false positives. Outputs an annotated video, a
+                  frame-by-frame CSV, and a summary CSV collapsing continuous
+                  state intervals. Single-face, CPU-only, no network required.
                 </p>
                 <ul class="tech-stack">
                   <li>MediaPipe</li><li>OpenCV</li><li>solvePnP</li>
