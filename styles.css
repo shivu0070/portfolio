@@ -2697,3 +2697,27 @@ html, body {
 	overflow-x: hidden;
 	width: 100%;
 }
+
+
+/* Recruiter-facing introduction and a compact mobile reading order. */
+.hero .hero-portrait {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1.4rem;
+    border: 1px solid var(--glass-brd);
+    animation: none;
+}
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+}
+.hero-stats > div { min-width: 0; }
+@media screen and (max-width: 1024px) {
+    .hero-visual { order: 1; }
+}
+@media screen and (max-width: 768px) {
+    .hero .container { padding-block: 2rem 4rem; }
+    .hero-stats { grid-template-columns: 1fr; }
+}
