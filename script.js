@@ -53,7 +53,7 @@ hamburger?.addEventListener('keydown', e => {
 		'CNN image classifiers.',
 		'ML & predictive models.',
 		'Power BI analytics dashboards.',
-		'AI systems that work in the real world.',
+		'local LLM application prototypes.',
 	]
 
 	if (prefersReducedMotion) {
